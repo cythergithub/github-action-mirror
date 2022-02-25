@@ -2,9 +2,9 @@
 
 Fork Universal mirroring repository tool (pkgstore).
 
-## Workflow Syntax
+## Example
 
-### GitHub > GitLab
+### Bitbucket > Github
 
 ```yml
 name: "Repository Mirror"
@@ -19,12 +19,12 @@ jobs:
     steps:
       - uses: cythergithub/github-action-mirror@main
         with:
-          source_repo: "https://github.com/${{ github.repository }}.git"
-          source_user: "${{ secrets.MIRROR_SOURCE_USER_GITHUB }}"
-          source_token: "${{ secrets.MIRROR_SOURCE_TOKEN_GITHUB }}"
+          source_repo: "https://github.com/${{ bitbucket.repository }}.git"
+          source_user: "${{ secrets.MIRROR_SOURCE_USER_BITBUCKET }}"
+          source_token: "${{ secrets.MIRROR_SOURCE_TOKEN_BITBUCKET }}"
           target_repo: "https://gitlab.com/${{ github.repository }}.git"
-          target_user: "${{ secrets.MIRROR_TARGET_USER_GITLAB }}"
-          target_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITLAB }}"
+          target_user: "${{ secrets.MIRROR_TARGET_USER_GITHUB }}"
+          target_token: "${{ secrets.MIRROR_TARGET_TOKEN_GITHUB }}"
 ```
 
 ## Legend
